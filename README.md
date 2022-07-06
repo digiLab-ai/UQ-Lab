@@ -10,3 +10,9 @@ git clone https://github.com/digiLab-ai/UQ-Lab
 cd UQ-Lab
 poetry install
 ```
+
+## Testing
+
+```shell
+poetry run pytest ./tests/
+```
