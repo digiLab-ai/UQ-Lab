@@ -53,7 +53,7 @@ jobs:
                   poetry run black --diff ./tests/
 
             - name: Testing
-              run: poetry run pytest ./tests/
+              run: poetry run pytest --cache-clear --cov=lib ./tests/
 
     osx-tests:
         needs: ubuntu-tests
