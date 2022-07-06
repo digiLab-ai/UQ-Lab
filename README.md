@@ -10,6 +10,10 @@ cd UQ-Lab
 poetry install
 ```
 
+## Documentation
+
+[Link](https://digilab-ai.github.io/UQ-Lab) to `main/` branches documentation.
+
 ## Testing
 
 ```shell
