@@ -105,7 +105,7 @@ jobs:
                   poetry run black --diff ./tests/
 
             - name: Testing
-              run: poetry run pytest ./tests/
+              run: poetry run pytest --cache-clear --cov=lib ./tests/
 
     windows-tests:
         needs: ubuntu-tests
@@ -157,7 +157,7 @@ jobs:
                   poetry run black --diff ./tests/
 
             - name: Testing
-              run: python -m poetry run pytest ./tests/
+              run: poetry run pytest --cache-clear --cov=lib ./tests/
 
     update-documentation:
         needs: ubuntu-tests
