@@ -1,6 +1,6 @@
 # UQ-Lab
 
-Uncertainty Quantification laboratory and playground
+Uncertainty Quantification laboratory and playground.
 
 ## Quickstart
 
@@ -12,9 +12,7 @@ poetry install
 
 ## Documentation
 
-Documentation at [https://digilab-ai.github.io/UQ-Lab](https://digilab-ai.github.io/UQ-Lab):
-
-<iframe src="https://digilab-ai.github.io/UQ-Lab" width="100%" height="400px"></iframe>
+Documentation at [https://digilab-ai.github.io/UQ-Lab](https://digilab-ai.github.io/UQ-Lab).
 
 ## Testing
 
