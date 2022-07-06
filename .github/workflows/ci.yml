@@ -50,10 +50,10 @@ jobs:
 
             - name: Quality Assurance
               run: |
-                  python -m poetry -m flake8 ./lib/ --count --select=E9,F63,F7,F82, --ignore=F821 --show-source --statistics
-                  python -m poetry -m flake8 ./tests/ --count --select=E9,F63,F7,F82, --ignore=F821 --show-source --statistics
-                  python -m poetry -m black --diff ./lib/
-                  python -m poetry -m black --diff ./tests/
+                  python -m poetry flake8 ./lib/ --count --select=E9,F63,F7,F82, --ignore=F821 --show-source --statistics
+                  python -m poetry flake8 ./tests/ --count --select=E9,F63,F7,F82, --ignore=F821 --show-source --statistics
+                  python -m poetry black --diff ./lib/
+                  python -m poetry black --diff ./tests/
 
             - name: Testing
               run: python -m poetry run pytest
