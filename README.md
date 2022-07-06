@@ -2,7 +2,6 @@
 
 Uncertainty Quantification laboratory and playground
 
-
 ## Quickstart
 
 ```shell
