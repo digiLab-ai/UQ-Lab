@@ -160,7 +160,7 @@ jobs:
               run: python -m poetry run pytest ./tests/
 
     update-documentation:
-        needs: generate-badges
+        needs: ubuntu-tests
         runs-on: ubuntu-latest
         strategy:
             matrix:
