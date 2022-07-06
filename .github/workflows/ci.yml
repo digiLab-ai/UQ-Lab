@@ -206,9 +206,6 @@ jobs:
                   rm -r docs/build
                   sh docs/build.sh
 
-            - name: List
-              run: ls docs/
-
             - name: Commit files
               run: |
                   echo ${{ github.ref }}
