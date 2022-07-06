@@ -56,4 +56,4 @@ jobs:
                   poetry run black --diff ./tests/
 
             - name: Testing
-              run: poetry run pytest
+              run: poetry run pytest ./tests/
