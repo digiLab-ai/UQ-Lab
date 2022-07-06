@@ -9,3 +9,5 @@ LC_ALL=C find ./docs/build/html -type f -exec sed -i -e 's/_autosummary/.\/autos
 LC_ALL=C find ./docs/build/html -type f -exec sed -i -e 's/_modules/.\/modules/g' {} +
 LC_ALL=C find ./docs/build/html -type f -exec sed -i -e 's/_sources/.\/sources/g' {} +
 LC_ALL=C find ./docs/build/html -type f -exec sed -i -e 's/_static/.\/static/g' {} +
+
+echo "<div>Hello, world!</div>" >> docs/build/index.html
