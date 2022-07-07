@@ -4,13 +4,16 @@
     <div class="container-fluid py-5">
         <h1 class="display-5 fw-bold" style="text-align: center">Campaign</h1>
         <hr />
-        <div>{% include "campaign/params.html" %}</div>
-        <hr />
-        <div>{% include "campaign/data.html" %}</div>
-        <hr />
-        <div>{% include "campaign/plot.html" %}</div>
-        <hr />
-        <div>{% include "campaign/model.html" %}</div>
+        <div id="parameters">{% include "campaign/parameters.html" %}</div>
+        <div id="data" style="display: none">
+            {% include "campaign/data.html" %}
+        </div>
+        <div id="plot" style="display: none">
+            {% include "campaign/plot.html" %}
+        </div>
+        <div id="model" style="display: none">
+            {% include "campaign/model.html" %}
+        </div>
     </div>
 </div>
 

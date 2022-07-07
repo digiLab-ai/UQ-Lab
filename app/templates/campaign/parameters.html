@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-sm-6">{% include "campaign/parameters/input.html" %}</div>
+    <div class="col-sm-6">{% include "campaign/parameters/output.html" %}</div>
+</div>
+<button class="btn btn-primary" onclick="init_data()">Init</button>
+
+<script>
+    const init_data = () => {
+        $("#parameters").slideUp();
+        $("#data").slideDown();
+    };
+</script>
