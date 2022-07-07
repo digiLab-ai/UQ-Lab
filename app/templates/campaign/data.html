@@ -1,11 +1,6 @@
 <table class="table table-hover">
     <thead>
-        <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>></th>
-            <th>Email</th>
-        </tr>
+        <tr id="data_table_headers"></tr>
     </thead>
     <tbody>
         <tr>
@@ -19,6 +14,15 @@
 
 <script>
     const init_table = () => {
-        console.log("Init table");
+        const input_params = list_input_parameter_names();
+        const output_params = list_output_parameter_names();
+
+        for (const in_name of list_input_parameter_names()) {
+            $("#data_table_headers").append(`<th>${in_name}</th>`);
+        }
+        $("#data_table_headers").append(`<th>></th>`);
+        for (const out_name of list_output_parameter_names()) {
+            $("#data_table_headers").append(`<th>${out_name}</th>`);
+        }
     };
 </script>

@@ -10,7 +10,7 @@
     const OUTPUT_PARAM = (name, min, max) => `
         <div class="input-group mb-3">
             <label class="input-group-text">Parameter</label>
-            <input type="text" class="form-control" value="${name}" />
+            <input type="text" class="output_parameter_name form-control" value="${name}" />
             <label class="input-group-text">∈</label>
             <input type="number" class="form-control" value="${min}" />
             <label class="input-group-text">-</label>
@@ -29,11 +29,11 @@
         output_param_counter += 1;
     };
 
-    const list_output_parameters = () => {
-        var input_parameters = [];
-        $(".input_parameter_name").each((n, obj) => {
-            input_parameters.push($(obj).val());
+    const list_output_parameter_names = () => {
+        var output_parameters = [];
+        $(".output_parameter_name").each((n, obj) => {
+            output_parameters.push($(obj).val());
         });
-        return input_parameters;
+        return output_parameters;
     };
 </script>

@@ -2,11 +2,13 @@
     <div class="col-sm-6">{% include "campaign/parameters/input.html" %}</div>
     <div class="col-sm-6">{% include "campaign/parameters/output.html" %}</div>
 </div>
+<hr />
 <button class="btn btn-primary" onclick="init_data()">Init</button>
 
 <script>
     const init_data = () => {
         $("#parameters").slideUp();
+        init_table();
         $("#data").slideDown();
     };
 </script>
