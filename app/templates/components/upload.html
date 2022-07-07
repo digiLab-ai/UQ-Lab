@@ -6,10 +6,16 @@
         text-align: center;
     "
 >
-    <div class="mb-3">
-        <label for="formFile" class="form-label"
-            ><h2>Upload <i class="bi bi-cloud-upload-fill"></i></h2
-        ></label>
-        <input class="form-control" type="file" id="formFile" />
+    <div class="input-group">
+        <input type="file" class="form-control" id="inputGroupFile02" />
+        <button class="btn btn-primary" type="button" onclick="submit()">
+            Submit
+        </button>
     </div>
 </div>
+
+<script>
+    const submit = () => {
+        alert("Submit!");
+    };
+</script>
