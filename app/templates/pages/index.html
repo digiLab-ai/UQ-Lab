@@ -13,9 +13,12 @@
         </div>
         <hr />
         {% endif %}
-        <div class="d-flex justify-content-center flex-nowrap">
-            <button class="btn btn-success">New Campaign</button>
+        <div class="input-group mb-3">
+            <label class="input-group-text">New Campaign</label>
+            <input type="text" class="form-control" placeholder="name" />
+            <button class="btn btn-success">Create</button>
         </div>
+        {% include "components/message_box.html" %}
     </div>
 </div>
 
