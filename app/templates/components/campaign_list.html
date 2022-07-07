@@ -1,0 +1,16 @@
+<div class="list-group">
+    {% for campaign in campaign_names %}
+    <a
+        class="list-group-item list-group-item-action"
+        onclick="go_to_campaign('{{ campaign }}')"
+    >
+        {{ campaign }}
+    </a>
+    {% endfor %}
+</div>
+
+<script>
+    const go_to_campaign = (name) => {
+        console.log("TODO: Go to campaign: " + name);
+    };
+</script>
