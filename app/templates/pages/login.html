@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="rounded-3 bg-light" style="max-width: 400px">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold" style="text-align: center">digiLab</h1>
+        <hr />
+        <div class="input-group mb-3">
+            <input
+                type="text"
+                class="input_parameter_name form-control"
+                placeholder="username"
+            />
+            <input
+                type="password"
+                class="input_parameter_name form-control"
+                placeholder="password"
+            />
+        </div>
+        <button class="btn btn-primary">Login</button>
+    </div>
+</div>
+
+{% endblock %}
