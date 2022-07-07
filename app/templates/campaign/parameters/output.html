@@ -1,14 +1,31 @@
 <div class="mb-3">
-    <h4>Output</h4>
+    <h4 class="d-inline">Output</h4>
+    <button class="btn btn-primary float-end" onclick="add_output_parameter()">
+        <i class="bi bi-plus-lg"></i>
+    </button>
 </div>
-<div class="input-group mb-3">
-    <label class="input-group-text">Parameter</label>
-    <input type="text" class="form-control" value="y0" />
-    <label class="input-group-text">∈</label>
-    <input type="number" class="form-control" value="0.0" />
-    <label class="input-group-text">-</label>
-    <input type="number" class="form-control" value="1.0" />
-</div>
-<div>
-    <input type="button" class="btn btn-primary float-end" value="Add" />
-</div>
+<div id="output_parameters"></div>
+
+<script>
+    const OUTPUT_PARAM = (name, min, max) => `
+        <div class="input-group mb-3">
+            <label class="input-group-text">Parameter</label>
+            <input type="text" class="form-control" value="${name}" />
+            <label class="input-group-text">∈</label>
+            <input type="number" class="form-control" value="${min}" />
+            <label class="input-group-text">-</label>
+            <input type="number" class="form-control" value="${max}" />
+            <button class="btn btn-danger float-end" onclick="$(this).parent().remove()">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+    `;
+
+    var output_param_counter = 0;
+    const add_output_parameter = () => {
+        $("#output_parameters").append(
+            OUTPUT_PARAM("Y" + output_param_counter, 0.0, 1.0)
+        );
+        output_param_counter += 1;
+    };
+</script>

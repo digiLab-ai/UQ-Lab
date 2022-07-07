@@ -4,7 +4,7 @@
         <i class="bi bi-plus-lg"></i>
     </button>
 </div>
-<div id="inputs"></div>
+<div id="input_parameters"></div>
 
 <script>
     const INPUT_PARAM = (name, min, max) => `
@@ -23,7 +23,9 @@
 
     var input_param_counter = 0;
     const add_input_parameter = () => {
-        $("#inputs").append(INPUT_PARAM("X" + input_param_counter, 0.0, 1.0));
+        $("#input_parameters").append(
+            INPUT_PARAM("X" + input_param_counter, 0.0, 1.0)
+        );
         input_param_counter += 1;
     };
 </script>
