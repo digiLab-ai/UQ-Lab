@@ -5,7 +5,7 @@ import os
 from . import settings
 
 
-def get_exiting_campaigns():
+def get_campaign_names():
     """
     Get a list of all exiting campaigns.
     """
