@@ -10,11 +10,10 @@ def validate_credentials(username, password):
     """
     Check if a login is valid
     """
-
-    return (
-        json.load(os.path.join(settings.RESOURCES_DIR, "users.json")).get(username)
-        == password
-    )
+    path = os.path.join(settings.RESOURCES_DIR, "users.json")
+    with open(path) as f:
+        data = json.load(f)
+        return data.get(username) == password
 
 
 def get_campaign_names():

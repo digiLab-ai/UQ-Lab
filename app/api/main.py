@@ -10,12 +10,17 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 
-@app.get("/login", response_class=HTMLResponse)
+@app.get("/", response_class=HTMLResponse)
 async def login(request: Request):
     return settings.templates.TemplateResponse(
         "pages/login.html",
         {"request": request},
     )
+
+
+@app.get("/validate_credentials/{username}/{password}")
+async def validate_credentials(username: str, password: str):
+    return database.validate_credentials(username, password)
 
 
 @app.get("/index", response_class=HTMLResponse)
