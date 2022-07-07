@@ -1,4 +1,4 @@
-from fastapi import FastAPI, File, Request, UploadFile
+from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
@@ -10,7 +10,7 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 
 @app.get("/", response_class=HTMLResponse)
-async def homepage(request: Request):
+async def campaign(request: Request):
     return settings.templates.TemplateResponse(
-        "pages/homepage.html", {"request": request}
+        "pages/campaign.html", {"request": request}
     )
