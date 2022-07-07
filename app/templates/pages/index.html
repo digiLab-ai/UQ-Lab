@@ -6,7 +6,10 @@
         <hr />
         <div class="list-group">
             {% for campaign in campaign_names %}
-            <a class="list-group-item list-group-item-action">
+            <a
+                class="list-group-item list-group-item-action"
+                onclick="go_to_campaign('{{ campaign }}')"
+            >
                 {{ campaign }}
             </a>
             {% endfor %} {% if campaign_names %}
@@ -19,5 +22,11 @@
         <div id="message_box">{% include "components/message_box.html" %}</div>
     </div>
 </div>
+
+<script>
+    const go_to_campaign = (name) => {
+        console.log("TODO: Go to campaign: " + name);
+    };
+</script>
 
 {% endblock %}
