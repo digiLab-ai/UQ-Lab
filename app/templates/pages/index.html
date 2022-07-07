@@ -13,12 +13,10 @@
         </div>
         <hr />
         {% endif %}
-        <div class="input-group mb-3">
-            <label class="input-group-text">New Campaign</label>
-            <input type="text" class="form-control" placeholder="name" />
-            <button class="btn btn-success">Create</button>
+        <div id="create_campaign">
+            {% include "components/create_campaign.html" %}
         </div>
-        {% include "components/message_box.html" %}
+        <div id="message_box">{% include "components/message_box.html" %}</div>
     </div>
 </div>
 
