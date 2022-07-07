@@ -28,4 +28,12 @@
         );
         output_param_counter += 1;
     };
+
+    const list_output_parameters = () => {
+        var input_parameters = [];
+        $(".input_parameter_name").each((n, obj) => {
+            input_parameters.push($(obj).val());
+        });
+        return input_parameters;
+    };
 </script>

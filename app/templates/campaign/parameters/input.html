@@ -10,7 +10,7 @@
     const INPUT_PARAM = (name, min, max) => `
         <div class="input-group mb-3">
             <label class="input-group-text">Parameter</label>
-            <input type="text" class="form-control" value="${name}" />
+            <input type="text" class="input_parameter_name form-control" value="${name}" />
             <label class="input-group-text">∈</label>
             <input type="number" class="form-control" value="${min}" />
             <label class="input-group-text">-</label>
@@ -27,5 +27,13 @@
             INPUT_PARAM("X" + input_param_counter, 0.0, 1.0)
         );
         input_param_counter += 1;
+    };
+
+    const list_input_parameters = () => {
+        var input_parameters = [];
+        $(".input_parameter_name").each((n, obj) => {
+            input_parameters.push($(obj).val());
+        });
+        return input_parameters;
     };
 </script>
