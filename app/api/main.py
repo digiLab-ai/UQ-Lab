@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
+from starlette.responses import RedirectResponse
 
 from . import settings
 from . import database
@@ -17,9 +18,18 @@ async def validate_credentials(username: str, password: str):
 
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
+    return RedirectResponse("/login")
+
+
+@app.get("/overview/{username}", response_class=HTMLResponse)
+async def overview(request: Request, username: str):
     return settings.templates.TemplateResponse(
         "pages/overview.html",
-        {"request": request, "campaign_names": database.get_campaign_names()},
+        {
+            "request": request,
+            username: username,
+            "campaign_names": database.get_campaign_names(),
+        },
     )
 
 

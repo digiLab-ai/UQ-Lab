@@ -1,7 +1,7 @@
 class Client {
     // == Navigation ==
-    static go_to_overview() {
-        window.location.href = "/";
+    static go_to_overview(username) {
+        window.location.href = "/overview/" + username;
     }
 
     static go_to_login(username, name) {
