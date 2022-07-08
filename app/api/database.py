@@ -16,12 +16,14 @@ def validate_credentials(username, password):
         return data.get(username) == password
 
 
-def get_campaign_names():
+def get_campaign_names(username):
     """
-    Get a list of all exiting campaigns.
+    Get a list of a single user's campaign names.
     """
 
     return [
         Path(os.path.basename(p)).stem
-        for p in glob.glob(os.path.join(settings.RESOURCES_DIR, "campaigns", "*.csv"))
+        for p in glob.glob(
+            os.path.join(settings.RESOURCES_DIR, "campaigns", username, "*.csv")
+        )
     ]

@@ -28,7 +28,7 @@ async def overview(request: Request, username: str):
         {
             "request": request,
             username: username,
-            "campaign_names": database.get_campaign_names(),
+            "campaign_names": database.get_campaign_names(username),
         },
     )
 
