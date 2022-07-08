@@ -17,7 +17,7 @@ async def validate_credentials(username: str, password: str):
 
 
 @app.get("/", response_class=HTMLResponse)
-async def index(request: Request):
+async def index():
     return RedirectResponse("/login")
 
 
@@ -27,7 +27,7 @@ async def overview(request: Request, username: str):
         "pages/overview.html",
         {
             "request": request,
-            username: username,
+            "username": username,
             "campaign_names": database.get_campaign_names(username),
         },
     )
