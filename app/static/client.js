@@ -1,7 +1,15 @@
 class Client {
     // == Navigation ==
-    static go_to_homepage() {
+    static go_to_overview() {
         window.location.href = "/";
+    }
+
+    static go_to_login(username, name) {
+        window.location.href = "/login";
+    }
+
+    static go_to_campaign(username, name) {
+        window.location.href = "/campaign/" + username + "/" + name;
     }
 
     // == User ==

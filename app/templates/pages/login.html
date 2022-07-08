@@ -29,10 +29,10 @@
         const password = $("#password").val();
         Client.validate_credentials(username, password, (response) => {
             if (response) {
-                console.log("TODO: Continue to campaign page...");
-            } else {
-                show_error_message("Invalid username or password");
+                sessionStorage.setItem("digilab_uq_username", username);
+                Client.go_to_overview(username);
             }
+            show_error_message("Invalid username or password");
         });
     };
 </script>

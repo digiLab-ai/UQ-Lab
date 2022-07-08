@@ -5,7 +5,14 @@
         <h1 class="display-5 fw-bold" style="text-align: center">Campaign</h1>
         <hr />
         <div id="parameters">
-            {% include "campaign/parameters.html" %}
+            <div class="row">
+                <div class="col-sm-6">
+                    {% include "campaign/parameters/input.html" %}
+                </div>
+                <div class="col-sm-6">
+                    {% include "campaign/parameters/output.html" %}
+                </div>
+            </div>
             <hr />
             <button class="btn btn-primary" onclick="init_data()">Init</button>
         </div>
@@ -43,6 +50,12 @@
 
         append_data_to_table(response);
     };
+
+    $(document).ready(function () {
+        if (sessionStorage.getItem("digilab_uq_username") == null) {
+            Client.go_to_login();
+        }
+    });
 </script>
 
 {% endblock %}
