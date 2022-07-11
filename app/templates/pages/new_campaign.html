@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="rounded-3 bg-light" style="max-width: 1200px">
+    <div class="container-fluid py-5">
+        <h4>{{ campaign_name }}</h4>
+        <hr />
+        <div class="row">
+            <div class="col-sm-6">
+                {% include "components/parameters/input.html" %}
+            </div>
+            <div class="col-sm-6">
+                {% include "components/parameters/output.html" %}
+            </div>
+        </div>
+        <hr />
+        <button
+            id="create_button"
+            class="btn btn-primary"
+            onclick="Client.create_campaign(() => {Client.go_to_campaign('{{ campaign_name }}')})"
+            disabled
+        >
+            Create
+        </button>
+        <button class="btn btn-danger" onclick="Client.go_to_overview()">
+            Back
+        </button>
+    </div>
+</div>
+
+<script>
+    const check_setup_validity = () => {
+        if (
+            $(".input_parameter_name").length *
+                $(".output_parameter_name").length >
+            0
+        ) {
+            $("#create_button").prop("disabled", false);
+        } else {
+            $("#create_button").prop("disabled", true);
+        }
+    };
+</script>
+
+{% endblock %}

@@ -15,7 +15,7 @@
             <input type="number" class="form-control" value="${min}" />
             <label class="input-group-text">-</label>
             <input type="number" class="form-control" value="${max}" />
-            <button class="btn btn-danger float-end" onclick="$(this).parent().remove()">
+            <button class="btn btn-danger float-end" onclick="$(this).parent().remove();check_setup_validity()">
                 <i class="bi bi-x-lg"></i>
             </button>
         </div>
@@ -27,6 +27,7 @@
             INPUT_PARAM("X" + input_param_counter, 0.0, 1.0)
         );
         input_param_counter += 1;
+        check_setup_validity();
     };
 
     const list_input_parameter_names = () => {

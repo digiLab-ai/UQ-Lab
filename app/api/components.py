@@ -1,7 +1,6 @@
 from fastapi import APIRouter, Depends, Request
 from fastapi.responses import HTMLResponse
 from pathlib import Path
-import glob
 import os
 
 from . import settings

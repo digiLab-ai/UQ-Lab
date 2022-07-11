@@ -25,8 +25,15 @@ async def login(request: Request):
     return settings.templates.TemplateResponse("pages/login.html", {"request": request})
 
 
+@app.get("/new_campaign/{name}", response_class=HTMLResponse)
+async def new_campaign(request: Request, name: str):
+    return settings.templates.TemplateResponse(
+        "pages/new_campaign.html", {"request": request, "campaign_name": name}
+    )
+
+
 @app.get("/campaign/{name}", response_class=HTMLResponse)
-async def login(request: Request, name: str):
+async def resume_campaign(request: Request, name: str):
     return settings.templates.TemplateResponse(
         "pages/campaign.html", {"request": request, "campaign_name": name}
     )

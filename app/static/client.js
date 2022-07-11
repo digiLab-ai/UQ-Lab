@@ -8,6 +8,10 @@ class Client {
         window.location.href = "/login";
     }
 
+    static go_to_new_campaign(name) {
+        window.location.href = "/new_campaign/" + String(name);
+    }
+
     static go_to_campaign(name) {
         window.location.href = "/campaign/" + String(name);
     }

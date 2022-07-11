@@ -2,6 +2,7 @@ body {
     background-image: url('../images/background.svg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     font-family: 'Exo 2', sans-serif;
 }
 

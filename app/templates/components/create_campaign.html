@@ -19,8 +19,6 @@
             return;
         }
 
-        Client.create_campaign(name, () => {
-            Client.go_to_campaign(name);
-        });
+        Client.go_to_new_campaign(name);
     };
 </script>
