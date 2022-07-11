@@ -52,12 +52,6 @@
 
         append_data_to_table(response);
     };
-
-    $(document).ready(function () {
-        if (sessionStorage.getItem("digilab_uq_username") == null) {
-            Client.go_to_login();
-        }
-    });
 </script>
 
 {% endblock %}

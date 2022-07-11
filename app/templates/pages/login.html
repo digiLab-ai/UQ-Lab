@@ -51,6 +51,7 @@
                     }
 
                     sessionStorage.setItem("token", data.access_token);
+                    alert("Going to overview");
                     Client.go_to_overview();
                 },
                 failure: (data) => {

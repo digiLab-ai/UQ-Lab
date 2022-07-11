@@ -13,23 +13,11 @@
         <div id="message_box" class="mt-3">
             {% include "components/message_box.html" %}
         </div>
-
         <hr />
-        <button
-            class="btn btn-danger"
-            onclick="sessionStorage.removeItem('digilab_uq_username');Client.go_to_login()"
-        >
+        <button class="btn btn-danger" onclick="Client.go_to_login()">
             Sign Out
         </button>
     </div>
 </div>
-
-<script>
-    $(document).ready(function () {
-        if (sessionStorage.getItem("digilab_uq_username") == null) {
-            Client.go_to_login();
-        }
-    });
-</script>
 
 {% endblock %}
