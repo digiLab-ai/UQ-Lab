@@ -35,7 +35,7 @@
         <script src="/static/client.js"></script>
     </head>
     <body>
-        <div class="container">
+        <div id="wrapper" class="container" style="display: none">
             <div
                 class="row d-flex align-items-center justify-content-center"
                 style="height: 100vh"
@@ -43,5 +43,16 @@
                 {% block content %} {% endblock %}
             </div>
         </div>
+
+        <script>
+            $(document).ready(function () {
+                if (window.location.href.split("/").at(-1) != "login") {
+                    if (sessionStorage.getItem("token") == null) {
+                        Client.go_to_login();
+                    }
+                }
+                $("#wrapper").fadeIn();
+            });
+        </script>
     </body>
 </html>

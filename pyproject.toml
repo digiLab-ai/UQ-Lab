@@ -11,6 +11,8 @@ authors = ["Freddy Wordingham", "Mikkel Lykkegaard", "Tim Dodwell"]
 fastapi = "^0.78.0"
 python = "^3.9"
 uvicorn = "^0.18.2"
+fastapi-login = "^1.8.2"
+python-multipart = "^0.0.5"
 
 [tool.poetry.dev-dependencies]
 black = "^22.6.0"

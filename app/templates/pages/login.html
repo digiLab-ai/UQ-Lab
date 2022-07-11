@@ -22,24 +22,16 @@
                 placeholder="password"
             />
         </div>
-        <button class="btn btn-outline-light" onclick="attempt_login()">
-            Login
-        </button>
+        <button class="btn btn-outline-light" onclick="login()">Login</button>
         <div class="mt-3">{% include "components/message_box.html" %}</div>
     </div>
 </div>
 
 <script>
-    const attempt_login = () => {
-        const username = $("#username").val();
-        const password = $("#password").val();
-        Client.validate_credentials(username, password, (response) => {
-            if (response) {
-                sessionStorage.setItem("digilab_uq_username", username);
-                Client.go_to_overview(username);
-            }
-            show_error_message("Invalid username or password");
-        });
+    const login = () => {
+        show_error_message("TODO");
+        //const username = $("#username").val();
+        //const password = $("#password").val();
     };
 </script>
 
