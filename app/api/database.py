@@ -1,12 +1,9 @@
 import atexit
-from fastapi import APIRouter
 from pathlib import Path
 import json
 
+
 from . import settings
-
-
-database_route = APIRouter()
 
 
 DB = json.loads(Path(settings.DATABASE_PATH).read_text())

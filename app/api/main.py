@@ -4,11 +4,13 @@ from fastapi.staticfiles import StaticFiles
 
 from . import settings
 from .auth import auth_route
+from .components import components_route
 
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 app.include_router(auth_route, prefix="/auth")
+app.include_router(components_route, prefix="/components")
 
 
 @app.get("/", response_class=HTMLResponse)
