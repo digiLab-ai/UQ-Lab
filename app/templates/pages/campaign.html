@@ -1,57 +1,16 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="rounded-3 bg-light" style="max-width: ">
+<div class="rounded-3 bg-light" style="max-width: 700px">
     <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold" style="text-align: center">
-            {{ username }}
-        </h1>
+        {% include "components/navbar.html" %}
         <hr />
-        <div id="parameters">
-            <div class="row">
-                <div class="col-sm-6">
-                    {% include "campaign/parameters/input.html" %}
-                </div>
-                <div class="col-sm-6">
-                    {% include "campaign/parameters/output.html" %}
-                </div>
-            </div>
-            <hr />
-            <button class="btn btn-primary" onclick="init_data()">Init</button>
+        <div id="data_panel" class="panel" style="display: none">
+            {% include "components/data.html" %}
         </div>
-        <div id="data" style="display: none">
-            {% include "campaign/data.html" %}
-            <hr />
-            <button class="btn btn-primary" onclick="submit_data()">
-                Submit
-            </button>
-        </div>
-        <div id="plot" style="display: none">
-            {% include "campaign/plot.html" %}
-        </div>
-        <div id="model" style="display: none">
-            {% include "campaign/model.html" %}
+        <div id="model_panel" class="panel" style="display: none">
+            {% include "components/model.html" %}
         </div>
     </div>
 </div>
-
-<script>
-    const init_data = () => {
-        $("#parameters").slideUp();
-        init_table();
-        $("#data").slideDown();
-    };
-
-    const submit_data = () => {
-        alert("submit");
-
-        const response = {
-            X0: [0.0, 0.3, 1.0],
-            X1: [0.5, 0.5, 0.5],
-            X2: [0.4, 0.7, 0.8],
-        };
-
-        append_data_to_table(response);
-    };
-</script>
 
 {% endblock %}

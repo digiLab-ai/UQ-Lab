@@ -12,12 +12,15 @@
 <script>
     const create_campaign = () => {
         const name = $("#campaign_name").val();
-        if (name.length <= 3) {
+        if (name.length < 3) {
             show_error_message(
                 "Campaign name must be at least 3 characters long."
             );
             return;
         }
-        console.log("TODO: Go to campaign creation page: " + name);
+
+        Client.create_campaign(name, () => {
+            Client.go_to_campaign(name);
+        });
     };
 </script>

@@ -8,6 +8,10 @@ class Client {
         window.location.href = "/login";
     }
 
+    static go_to_campaign(name) {
+        window.location.href = "/campaign/" + String(name);
+    }
+
     // == Components ==
     static campaign_list(success, failure) {
         const token = sessionStorage.getItem("token");

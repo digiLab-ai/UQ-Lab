@@ -23,3 +23,10 @@ async def homepage(request: Request):
 @app.get("/login", response_class=HTMLResponse)
 async def login(request: Request):
     return settings.templates.TemplateResponse("pages/login.html", {"request": request})
+
+
+@app.get("/campaign/{name}", response_class=HTMLResponse)
+async def login(request: Request, name: str):
+    return settings.templates.TemplateResponse(
+        "pages/campaign.html", {"request": request, "campaign_name": name}
+    )
