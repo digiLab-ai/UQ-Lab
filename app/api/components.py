@@ -1,5 +1,7 @@
 from fastapi import APIRouter, Depends, Request
 from fastapi.responses import HTMLResponse
+from pathlib import Path
+import glob
 import os
 
 from . import settings
@@ -13,9 +15,10 @@ components_route = APIRouter()
 async def campaigns_list(request: Request, user=Depends(manager)):
 
     campaign_names = [
-        f.name
-        for f in os.scandir(os.path.join(settings.CAMPAIGNS_DIR, user["tag"]))
-        if f.is_dir()
+        os.path.basename(name).split(".")[0]
+        for name in Path(os.path.join(settings.CAMPAIGNS_DIR, user["tag"])).glob(
+            "*.csv"
+        )
     ]
 
     return settings.templates.TemplateResponse(
