@@ -1,0 +1,13 @@
+{
+    "users": {
+        "freddy": {
+            "password": "orange"
+        },
+        "anhad": {
+            "password": "blue"
+        },
+        "tim": {
+            "password": "green"
+        }
+    }
+}
