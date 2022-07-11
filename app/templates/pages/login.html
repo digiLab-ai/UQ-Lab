@@ -1,24 +1,30 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="rounded-3 bg-light" style="max-width: 400px">
+<div class="rounded-3" style="max-width: 400px">
     <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold" style="text-align: center">digiLab</h1>
-        <hr />
+        <h1
+            class="display-5 fw-bold mb-3 text-light"
+            style="text-align: center"
+        >
+            digiLab
+        </h1>
         <div class="input-group mb-3">
             <input
                 id="username"
                 type="text"
-                class="input_parameter_name form-control"
+                class="form-control"
                 placeholder="username"
             />
             <input
                 id="password"
                 type="password"
-                class="input_parameter_name form-control"
+                class="form-control"
                 placeholder="password"
             />
         </div>
-        <button class="btn btn-primary" onclick="attempt_login()">Login</button>
+        <button class="btn btn-outline-light" onclick="attempt_login()">
+            Login
+        </button>
         <div class="mt-3">{% include "components/message_box.html" %}</div>
     </div>
 </div>
