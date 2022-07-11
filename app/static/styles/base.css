@@ -1,7 +1,7 @@
 body {
-    background-image: linear-gradient(#b636b6, #903490);
+    background-image: url('../images/background.svg');
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-size: cover;
     font-family: 'Exo 2', sans-serif;
 }
 
