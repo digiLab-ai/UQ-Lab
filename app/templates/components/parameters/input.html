@@ -8,13 +8,13 @@
 
 <script>
     const INPUT_PARAM = (name, min, max) => `
-        <div class="input-group mb-3">
+        <div class="input_parameter input-group mb-3">
             <label class="input-group-text">Parameter</label>
             <input type="text" class="input_parameter_name form-control" value="${name}" />
             <label class="input-group-text">∈</label>
-            <input type="number" class="form-control" value="${min}" />
+            <input type="number" class="input_parameter_min form-control" value="${min}" />
             <label class="input-group-text">-</label>
-            <input type="number" class="form-control" value="${max}" />
+            <input type="number" class="input_parameter_max form-control" value="${max}" />
             <button class="btn btn-danger float-end" onclick="$(this).parent().remove();check_setup_validity()">
                 <i class="bi bi-x-lg"></i>
             </button>
@@ -30,11 +30,15 @@
         check_setup_validity();
     };
 
-    const list_input_parameter_names = () => {
-        var input_parameters = [];
-        $(".input_parameter_name").each((n, obj) => {
-            input_parameters.push($(obj).val());
+    const input_param_data = () => {
+        let names = [];
+        let mins = [];
+        let maxs = [];
+        $(".input_parameter").each((n, obj) => {
+            names.push($(obj).find(".input_parameter_name").val());
+            mins.push($(obj).find(".input_parameter_min").val());
+            maxs.push($(obj).find(".input_parameter_max").val());
         });
-        return input_parameters;
+        return [names, mins, maxs];
     };
 </script>

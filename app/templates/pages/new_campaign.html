@@ -1,8 +1,8 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="rounded-3 bg-light" style="max-width: 1200px">
+<div class="rounded-3 bg-light" style="max-width: 1000px">
     <div class="container-fluid py-5">
-        <h4>{{ campaign_name }}</h4>
+        <h1>{{ campaign_name }}</h1>
         <hr />
         <div class="row">
             <div class="col-sm-6">
@@ -16,7 +16,7 @@
         <button
             id="create_button"
             class="btn btn-primary"
-            onclick="Client.create_campaign(() => {Client.go_to_campaign('{{ campaign_name }}')})"
+            onclick="create_campaign()"
             disabled
         >
             Create
@@ -38,6 +38,15 @@
         } else {
             $("#create_button").prop("disabled", true);
         }
+    };
+
+    const create_campaign = () => {
+        const inputs = input_param_data();
+        const outputs = output_param_data();
+
+        console.log(inputs[0]);
+        console.log(outputs[0]);
+        alert("TODO: Create campaign file...");
     };
 </script>
 
