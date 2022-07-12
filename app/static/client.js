@@ -32,7 +32,6 @@ class Client {
 
     // == Campaign ==
     static create_campaign(name, inputs, outputs, success, failure) {
-        console.log(inputs);
         const token = sessionStorage.getItem("token");
         $.ajax({
             url: "/create_campaign/" + String(name),
@@ -50,25 +49,17 @@ class Client {
         });
     }
 
-    //static create_campaign(name, inputs, outputs, success, failure) {
-    //    const token = sessionStorage.getItem("token");
-    //    $.ajax({
-    //        url: "/create_campaign/" + String(name),
-    //        type: "POST",
-    //        headers: {
-    //            Authorization: "Bearer " + token,
-    //        },
-    //        contentType: "application/json",
-    //        data: JSON.stringify({
-    //            inputs: inputs[0],
-    //            input_mins: inputs[1],
-    //            input_maxs: inputs[2],
-    //            outputs: outputs[0],
-    //            output_mins: outputs[1],
-    //            output_maxs: outputs[2],
-    //        }),
-    //        success: success,
-    //        error: failure,
-    //    });
-    //}
+    static load_campaign(name, success, failure) {
+        const token = sessionStorage.getItem("token");
+        $.ajax({
+            url: "/campaign_data/" + String(name),
+            type: "GET",
+            headers: {
+                Authorization: "Bearer " + token,
+            },
+            contentType: "application/json",
+            success: success,
+            error: failure,
+        });
+    }
 }

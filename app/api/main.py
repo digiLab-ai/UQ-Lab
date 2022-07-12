@@ -1,9 +1,10 @@
-from fastapi import FastAPI, Depends, Request
+from fastapi import FastAPI, Depends, Request, Response
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from typing import List, Tuple
 import os
+import pandas as pd
 
 from . import settings
 from .auth import auth_route, manager
@@ -60,3 +61,10 @@ async def resume_campaign(request: Request, name: str):
     return settings.templates.TemplateResponse(
         "pages/campaign.html", {"request": request, "campaign_name": name}
     )
+
+
+@app.get("/campaign_data/{name}")
+async def load_campaign(name: str, user=Depends(manager)):
+    path = os.path.join(settings.CAMPAIGNS_DIR, user["tag"], name + ".csv")
+    df = pd.read_csv(path)
+    return Response(df.to_json(orient="records"), media_type="application/json")
