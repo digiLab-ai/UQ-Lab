@@ -41,12 +41,20 @@
     };
 
     const create_campaign = () => {
-        const inputs = input_param_data();
-        const outputs = output_param_data();
-
-        console.log(inputs[0]);
-        console.log(outputs[0]);
-        alert("TODO: Create campaign file...");
+        Client.create_campaign(
+            "{{ campaign_name }}",
+            input_param_data(),
+            output_param_data(),
+            (response) => {
+                if (response == "Success") {
+                    Client.go_to_campaign("{{ campaign_name }}");
+                } else {
+                    show_error_message(
+                        "Unable to create campaign!\n" + response
+                    );
+                }
+            }
+        );
     };
 </script>
 
