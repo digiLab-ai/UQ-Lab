@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="rounded-3 bg-light" style="max-width: 700px">
+    <div class="container-fluid py-5">
+        {% include "components/navbar.html" %}
+        <hr />
+        <div id="data_panel" class="panel" style="display: none">
+            {% include "components/data.html" %}
+        </div>
+        <div id="model_panel" class="panel" style="display: none">
+            {% include "components/model.html" %}
+        </div>
+        <hr />
+        <button class="btn btn-danger" onclick="Client.go_to_overview()">
+            Back
+        </button>
+    </div>
+</div>
+
+{% endblock %}

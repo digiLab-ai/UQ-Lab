@@ -1,5 +1,17 @@
 body {
-    background-image: linear-gradient(#b636b6, #903490);
+    background-image: url('../images/background.svg');
     background-repeat: no-repeat;
+    background-size: cover;
     background-attachment: fixed;
+    font-family: 'Exo 2', sans-serif;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
 }

@@ -1,0 +1,14 @@
+Data
+
+<script>
+    $(document).ready(function () {
+        Client.load_campaign("{{ campaign_name }}", (response) => {
+            for (const [key, value] of Object.entries(response)) {
+                console.log(`${key}: ${value}`);
+                for (const [key, value] of Object.entries(response)) {
+                    console.log(`${key}: ${value}`);
+                }
+            }
+        });
+    });
+</script>

@@ -1,0 +1,24 @@
+<div class="input-group">
+    <label class="input-group-text">New Campaign</label>
+    <input
+        id="campaign_name"
+        type="text"
+        class="form-control"
+        placeholder="name"
+    />
+    <button class="btn btn-primary" onclick="create_campaign()">Create</button>
+</div>
+
+<script>
+    const create_campaign = () => {
+        const name = $("#campaign_name").val();
+        if (name.length < 3) {
+            show_error_message(
+                "Campaign name must be at least 3 characters long."
+            );
+            return;
+        }
+
+        Client.go_to_new_campaign(name);
+    };
+</script>

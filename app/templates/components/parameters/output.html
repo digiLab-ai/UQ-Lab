@@ -1,0 +1,44 @@
+<div class="mb-3">
+    <h4 class="d-inline">Output</h4>
+    <button class="btn btn-primary float-end" onclick="add_output_parameter()">
+        <i class="bi bi-plus-lg"></i>
+    </button>
+</div>
+<div id="output_parameters"></div>
+
+<script>
+    const OUTPUT_PARAM = (name, min, max) => `
+        <div class="output_parameter input-group mb-2">
+            <label class="input-group-text">Parameter</label>
+            <input type="text" class="output_parameter_name form-control" value="${name}" />
+            <label class="input-group-text">∈</label>
+            <input type="number" class="output_parameter_min form-control" value="${min}" />
+            <label class="input-group-text">-</label>
+            <input type="number" class="output_parameter_max form-control" value="${max}" />
+            <button class="btn btn-danger float-end" onclick="$(this).parent().remove();check_setup_validity()">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+    `;
+
+    var output_param_counter = 0;
+    const add_output_parameter = () => {
+        $("#output_parameters").append(
+            OUTPUT_PARAM("Y" + output_param_counter, 0.0, 1.0)
+        );
+        output_param_counter += 1;
+        check_setup_validity();
+    };
+
+    const output_param_data = () => {
+        let names = [];
+        let mins = [];
+        let maxs = [];
+        $(".output_parameter").each((n, obj) => {
+            names.push($(obj).find(".output_parameter_name").val());
+            mins.push($(obj).find(".output_parameter_min").val());
+            maxs.push($(obj).find(".output_parameter_max").val());
+        });
+        return [names, mins, maxs];
+    };
+</script>

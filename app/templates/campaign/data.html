@@ -1,0 +1,50 @@
+<table class="table table-hover">
+    <thead>
+        <tr id="data_table_headers"></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    const init_table = () => {
+        const input_params = list_input_parameter_names();
+        const output_params = list_output_parameter_names();
+
+        for (const in_name of list_input_parameter_names()) {
+            $("#data_table_headers").append(`<th>${in_name}</th>`);
+        }
+        $("#data_table_headers").append(`<th>></th>`);
+        for (const out_name of list_output_parameter_names()) {
+            $("#data_table_headers").append(`<th>${out_name}</th>`);
+        }
+    };
+
+    const append_data_to_table = (data) => {
+        if (data.length == 0) {
+            alert("Warning: No data!");
+            return;
+        }
+
+        let len = data[Object.keys(data)[0]].length;
+        for (const param_name in data) {
+            if (data[param_name].length != len) {
+                alert("Error: Response array data is jagged!");
+                return;
+            }
+        }
+
+        for (const param_name in data) {
+            if (data[param_name].length != len) {
+                alert("Error: Response array data is jagged!");
+                return;
+            }
+        }
+    };
+</script>
